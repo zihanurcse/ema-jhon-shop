@@ -7,7 +7,8 @@ import Cart from "../Cart/Cart";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
+  const [selectedItems, setSelectedItems] = useState(0);
 
   useEffect(() => {
     fetch("products.json")
@@ -15,17 +16,18 @@ const Shop = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  const cartItemHandle = () => {
-    console.log("add");
-    const newCartItem = cart + 1;
-    setCart(newCartItem);
+  //add to cart handler
+  const addCartHandle = (product) => {
+    //total selected items
+    const newSelectedItems = selectedItems + 1;
+    setSelectedItems(newSelectedItems)
+    //product added to cart
+    const newCart = [...cart,product]
+    setCart(newCart);
   };
 
   const clearCartHandle = () =>{
-    const deleteCart = confirm("Are you sure ?")
-    if(deleteCart){
-        setCart(0)
-    }
+    console.log("delete items")
   }
 
   return (
@@ -37,12 +39,12 @@ const Shop = () => {
             <Product
               key={product.id}
               product={product}
-              cartItemHandle={cartItemHandle}
+              addCartHandle={addCartHandle}
             ></Product>
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart} clearCartHandle={clearCartHandle}></Cart>
+          <Cart cart={cart} selectedItems={selectedItems} clearCartHandle={clearCartHandle}></Cart>
         </div>
       </div>
     </div>
