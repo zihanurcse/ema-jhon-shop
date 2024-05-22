@@ -1,0 +1,38 @@
+.product {
+  position: relative;
+  height: 490px;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+
+.cart-body {
+  margin: 7px;
+}
+
+.cart-img {
+  height: 300px;
+  width: 300px;
+  border-radius: 7px;
+}
+
+.cart-body h3 {
+  margin: 10px 0 0 0;
+}
+
+.cart-body p {
+  margin: 5px 0 20px 0;
+  padding: 0;
+}
+
+
+.btn-add-cart {
+  position: absolute;
+  bottom: 0;
+  border: 0;
+  border-radius: 0 0 7px 7px;
+  width: 100%;
+  font-size: 24px;
+  padding: 5px 0px;
+  background-color: #ffe0b3;
+  cursor: pointer;
+}
