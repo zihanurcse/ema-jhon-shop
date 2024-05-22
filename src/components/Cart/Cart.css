@@ -1,0 +1,28 @@
+h2{
+    margin: 10px auto;
+    font-size: 24px;
+    align-items: right;
+}
+
+.cart-btn-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-btn-container button{
+    font-size: medium;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-clear-cart{
+    background-color: #FF3030;
+}
+
+.btn-review-order{
+    background-color: #FF9900;
+}
