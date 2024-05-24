@@ -4,7 +4,7 @@ import "./Shop.css";
 import { useEffect } from "react";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import {addToDb} from '../../utilities/fakedb'
+import {addToDb, deleteShoppingCart} from '../../utilities/fakedb'
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -30,6 +30,7 @@ const Shop = () => {
 
   const clearCartHandle = () =>{
     console.log("delete items")
+    deleteShoppingCart();
   }
 
   return (
