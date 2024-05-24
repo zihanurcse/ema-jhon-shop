@@ -12,7 +12,10 @@
 
 .cart-container{
     background-color: #FFE0B3;
-    padding: 5px;
+    padding: 10px;
     border: none;
+    height: 450px;
+    position: sticky;
+    top: 0;
 }
 
