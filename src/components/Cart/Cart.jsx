@@ -5,7 +5,6 @@ import './Cart.css'
 
 const Cart = (props) => {
     const cart = props.cart;
-    const selectedItems = props.selectedItems;
     const clearCartHandle = props.clearCartHandle;
 
     //calculated cart total items
@@ -23,7 +22,7 @@ const Cart = (props) => {
     return (
         <div>
           <h2 className="cart-title">Order Summary</h2>
-          <p>Selected Items: {selectedItems}</p>
+          <p>Selected Items: {cart.length}</p>
           <p>Total Price: ${totalPrice}</p>
           <p>Shipping Charge: ${totalaShipping}</p>
           <p>Tax: ${tax.toFixed(2)}</p>
