@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "../Header/Header";
 import "./Shop.css";
 import { useEffect } from "react";
 import Product from "../Product/Product";
@@ -50,7 +49,6 @@ const Shop = () => {
 
   return (
     <div>
-      <Header></Header>
       <div className="shop-container">
         <div className="product-container">
           {products.map((product) => (
