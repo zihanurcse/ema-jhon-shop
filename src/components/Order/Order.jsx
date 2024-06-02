@@ -13,7 +13,7 @@ const Order = () => {
           <h1>Stored products: {storedProducts.length}</h1>
         </div>
         <div className="cart-container">
-          <Cart cart={[]}></Cart>
+          <Cart cart={storedProducts} ></Cart>
         </div>
       </div>
     </div>
