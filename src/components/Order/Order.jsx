@@ -1,10 +1,23 @@
 
+import { useLoaderData } from "react-router-dom";
+import Cart from "../Cart/Cart";
+
 const Order = () => {
-    return (
-        <div>
-            <h1>This is Order page</h1>
+  const storedProducts = useLoaderData();
+  console.log(storedProducts);  
+
+  return (
+    <div>
+      <div className="shop-container">
+        <div className="product-container">
+          <h1>Stored products: {storedProducts.length}</h1>
         </div>
-    );
+        <div className="cart-container">
+          <Cart cart={[]}></Cart>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Order;

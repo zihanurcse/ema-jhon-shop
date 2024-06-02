@@ -4,6 +4,7 @@ import Shop from "../Shop/Shop";
 import Order from "../Order/Order";
 import Manage from "../Manage/Manage";
 import Login from "../Login/Login";
+import { cartProducts } from "../../loaders/cartProductsLoader";
 
 const router = createBrowserRouter([
     {
@@ -15,15 +16,16 @@ const router = createBrowserRouter([
           element: <Shop></Shop>
         },
         {
-            path: '/order',
-            element: <Order></Order>
+            path: 'order',
+            element: <Order></Order>,
+            loader: () => cartProducts()
         },
         {
-            path: '/manage',
+            path: 'manage',
             element: <Manage></Manage>
         },
         {
-            path: "/login",
+            path: "login",
             element: <Login></Login>
         }
       ]
