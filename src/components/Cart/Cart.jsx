@@ -1,12 +1,9 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import './Cart.css'
 
-const Cart = (props) => {
-    const cart = props.cart;
-    const clearCartHandle = props.clearCartHandle;
-    const children = props.children;
+const Cart = ({cart, clearCartHandle, children}) => {
 
     //calculated cart total items
     let totalPrice = 0;

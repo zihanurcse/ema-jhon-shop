@@ -3,10 +3,8 @@ import './ReviewItem.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
-const ReviewItem = (props) => {
-    const {id, img, price, name, quantity} = props.product;
-    const handleDeleteToCart = props.handleDeleteToCart;
-    console.log(props.product)
+const ReviewItem = ({product, handleDeleteToCart}) => {
+    const {id, img, price, name, quantity} = product;
 
     return (
         <div className='item-container'>

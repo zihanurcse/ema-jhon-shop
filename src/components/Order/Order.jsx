@@ -5,7 +5,7 @@ import "./Order.css";
 import { useState } from "react";
 import { removeFromDb } from "../../utilities/fakedb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 
 const Order = () => {
   const cartProduct = useLoaderData();
@@ -32,7 +32,7 @@ const Order = () => {
         <div className="cart-container">
           <Cart cart={cart}>
             <button className="btn-review-order">
-              Proceed Checkout <FontAwesomeIcon icon={faArrowRight} />
+              <span>Proceed Checkout</span> <FontAwesomeIcon icon={faCreditCard} />
             </button>
           </Cart>
         </div>

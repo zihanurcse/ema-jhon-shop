@@ -12,6 +12,8 @@
 }
 
 .cart-btn-container button{
+    display: flex;
+    justify-content: space-between;
     font-size: medium;
     color: #ffffff;
     border: none;
@@ -24,5 +26,7 @@
 }
 
 .btn-review-order{
+    
+    align-items: center;
     background-color: #FF9900;
 }
