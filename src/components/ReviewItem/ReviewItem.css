@@ -1,0 +1,42 @@
+.item-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid #2A414F;
+    width: 571px;
+    height: 107px;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.item-container img{
+    width: 91px;
+    height: 91px;
+}
+
+.item-details{
+    margin: 0 17px;
+    flex-grow: 1;
+}
+
+.text-orange{
+    color: #FF9900;
+}
+
+.item-container button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    background-color: #f5bebe;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trash{
+    font-size: 24px;
+    color: #EB5757;
+}
