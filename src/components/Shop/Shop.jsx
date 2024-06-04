@@ -50,7 +50,7 @@ const Shop = () => {
   };
 
   const clearCartHandle = () => {
-    console.log("delete items");
+    setCart([])
     deleteShoppingCart();
   };
 

@@ -3,7 +3,7 @@ import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
 import { useState } from "react";
-import { removeFromDb } from "../../utilities/fakedb";
+import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,6 +15,11 @@ const Order = () => {
     const remainingProduct = cartProduct.filter((pd) => pd.id !== id);
     setCart(remainingProduct);
     removeFromDb(id);
+  };
+
+  const clearCartHandle = () => {
+    setCart([])
+    deleteShoppingCart();
   };
 
   return (
@@ -30,7 +35,7 @@ const Order = () => {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart}>
+          <Cart cart={cart} clearCartHandle={clearCartHandle}>
             <button className="btn-review-order">
               <span>Proceed Checkout</span> <FontAwesomeIcon icon={faCreditCard} />
             </button>
