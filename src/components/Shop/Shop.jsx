@@ -3,7 +3,13 @@ import "./Shop.css";
 import { useEffect } from "react";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import {addToDb, deleteShoppingCart, getShoppingCart} from '../../utilities/fakedb'
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../../utilities/fakedb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -17,35 +23,35 @@ const Shop = () => {
   }, []);
 
   //get data from localStore
-  useEffect(()=>{
+  useEffect(() => {
     const storedCart = getShoppingCart();
-    const newSaveCart = []
+    const newSaveCart = [];
     //step:1 get id from localStore
     for (const id in storedCart) {
       //step:2 find product from db, using by id
-      const matchProduct = products.find(pd => pd.id === id)
-      if(matchProduct){      
+      const matchProduct = products.find((pd) => pd.id === id);
+      if (matchProduct) {
         //step:3 get quantity from localStore and set to db
         const quantity = storedCart[id];
         matchProduct.quantity = quantity;
-        newSaveCart.push(matchProduct)
+        newSaveCart.push(matchProduct);
       }
     }
-    setCart(newSaveCart)
-  },[products])
+    setCart(newSaveCart);
+  }, [products]);
 
   //add to cart handler
   const addCartHandle = (product) => {
     //added to cart products
-    const newCart = [...cart, product]
+    const newCart = [...cart, product];
     setCart(newCart);
-    addToDb(product.id)
+    addToDb(product.id);
   };
 
-  const clearCartHandle = () =>{
-    console.log("delete items")
+  const clearCartHandle = () => {
+    console.log("delete items");
     deleteShoppingCart();
-  }
+  };
 
   return (
     <div>
@@ -60,7 +66,11 @@ const Shop = () => {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart} clearCartHandle={clearCartHandle}></Cart>
+          <Cart cart={cart} clearCartHandle={clearCartHandle}>
+            <button className="btn-review-order">
+              Review Order <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </Cart>
         </div>
       </div>
     </div>

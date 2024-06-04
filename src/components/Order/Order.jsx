@@ -4,6 +4,8 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
 import { useState } from "react";
 import { removeFromDb } from "../../utilities/fakedb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Order = () => {
   const cartProduct = useLoaderData();
@@ -12,7 +14,7 @@ const Order = () => {
   const handleDeleteToCart = (id) => {
     const remainingProduct = cartProduct.filter((pd) => pd.id !== id);
     setCart(remainingProduct);
-    removeFromDb(id)
+    removeFromDb(id);
   };
 
   return (
@@ -28,7 +30,11 @@ const Order = () => {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart}>
+            <button className="btn-review-order">
+              Proceed Checkout <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </Cart>
         </div>
       </div>
     </div>

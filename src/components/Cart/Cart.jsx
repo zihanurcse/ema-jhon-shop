@@ -6,6 +6,7 @@ import './Cart.css'
 const Cart = (props) => {
     const cart = props.cart;
     const clearCartHandle = props.clearCartHandle;
+    const children = props.children;
 
     //calculated cart total items
     let totalPrice = 0;
@@ -31,9 +32,9 @@ const Cart = (props) => {
             <button onClick={()=>clearCartHandle()} className="btn-clear-cart">
               Clear Cart <FontAwesomeIcon icon={faTrash} />
             </button>
-            <button className="btn-review-order">
-              Review Order <FontAwesomeIcon icon={faArrowRight} />
-            </button>
+            {
+              children
+            }
           </div>
         </div>
     );
