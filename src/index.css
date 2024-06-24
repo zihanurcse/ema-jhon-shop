@@ -3,3 +3,7 @@
     margin: 0 auto;
     padding: 0rem;
   }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

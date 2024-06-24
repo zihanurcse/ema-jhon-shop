@@ -5,6 +5,7 @@ import Order from "../Order/Order";
 import Manage from "../Manage/Manage";
 import Login from "../Login/Login";
 import { cartProducts } from "../../loaders/cartProductsLoader";
+import Register from "../Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
         {
             path: "login",
             element: <Login></Login>
-        }
+        },
+        {
+          path: "register",
+          element: <Register></Register>
+      },
       ]
     }
   ])
