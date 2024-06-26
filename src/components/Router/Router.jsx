@@ -6,6 +6,7 @@ import Manage from "../Manage/Manage";
 import Login from "../Login/Login";
 import { cartProducts } from "../../loaders/cartProductsLoader";
 import Register from "../Register/Register";
+import Checkout from "../Checkout/Checkout";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             path: 'order',
             element: <Order></Order>,
             loader: () => cartProducts()
+        },
+        {
+            path: 'checkout',
+            element: <Checkout></Checkout>
         },
         {
             path: 'manage',

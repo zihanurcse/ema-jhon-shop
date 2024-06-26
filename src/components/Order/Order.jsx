@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./Order.css";
@@ -37,7 +37,7 @@ const Order = () => {
         <div className="cart-container">
           <Cart cart={cart} clearCartHandle={clearCartHandle}>
             <button className="btn-review-order">
-              <span>Proceed Checkout</span> <FontAwesomeIcon icon={faCreditCard} />
+              <span><Link to="/checkout">Proceed Checkout</Link></span> <FontAwesomeIcon icon={faCreditCard} />
             </button>
           </Cart>
         </div>

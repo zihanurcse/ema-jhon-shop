@@ -28,6 +28,11 @@ const Header = () => {
           <Link to='/manage'>Manage Inventory</Link>
         </li>
         {
+          user && (<li>
+            <Link to='/checkout'>Checkout</Link>
+          </li>)
+        }
+        {
           user ? (<li>
             <Link onClick={handleSignOut}>LogOut</Link>
           </li>
